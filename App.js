@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import AppBar from "./src/lib/Appbar";
+import Welcome from "./src/lib/welcome";
+import Loading from "./src/lib/loading";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+   const styles = StyleSheet.create(
+      {
+         app: {
+            flex: 1,
+            backgroundColor: "#fff",
+         },
+         body: {
+            flex: 1,
+            backgroundColor: "#212329",
+         },
+         bg: { backgroundColor: "#212329", width: "100%", }
+      }
+   );
+   let names = [ "Débora", "Anselmo", "Noely", "Bernardo", ];
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+   return( <>
+      <View style={ styles.app }>
+         <StatusBar style={ { backgroundColor: "#1b1d22", } } />
+         <AppBar />
+         <View style={ styles.body }>
+
+            {
+               // names.forEach( name => {
+               // <Welcome key={ name } name={ name } />;
+               <Text>oi</Text>
+               // } )
+            }
+            <Welcome name="ceo" />
+            <Loading />
+         </View>
+      </View>
+   </> );
+}
