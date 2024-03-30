@@ -54,8 +54,11 @@ export default function App() {
                names.map( person => {
                   console.log( { person: person.name } );
                   return( <>
+                     <Text>{ "== == == == == == == == ==" }</Text>
                      <Welcome key={ Math.random() + 100000 } name={ person.name } />
                      <Text>{ person.email }</Text>
+                     <Text>{ person.id }</Text>
+                     <Text>{ "== == == == == == == == ==" }</Text>
                   </> );
                } )
             }
