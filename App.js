@@ -21,7 +21,28 @@ export default function App() {
          bg: { backgroundColor: "#212329", width: "100%", }
       }
    );
-   let names = [ "Débora", "Anselmo", "Noely", "Bernardo", ];
+   let names = [ 
+      {
+         id: 1,
+         name: "Débora",
+         email: "debora.mc.sammarco@gmail.com",
+      }, 
+      {
+         id: 2,
+         name: "Anselmo",
+         email: "noah.kd@gmail.com",
+      }, 
+      {
+         id: 3,
+         name: "Noely",
+         email: "noely.gangello@gmail.com",
+      }, 
+      {
+         id: 4,
+         name: "Bernardo",
+         email: "bernardo.sammarco.gangello@gmail.com",
+      }, 
+   ];
 
    return( <>
       <View style={ styles.app }>
@@ -30,10 +51,13 @@ export default function App() {
          <View style={ styles.body }>
 
             {
-               // names.forEach( name => {
-               // <Welcome key={ name } name={ name } />;
-               <Text>oi</Text>
-               // } )
+               names.map( person => {
+                  console.log( { person: person.name } );
+                  return( <>
+                     <Welcome key={ Math.random() + 100000 } name={ person.name } />
+                     <Text>{ person.email }</Text>
+                  </> );
+               } )
             }
             <Welcome name="ceo" />
             <Loading />
