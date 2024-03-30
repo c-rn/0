@@ -2,69 +2,47 @@
 
 import React from "react";
 import { StatusBar } from "expo-status-bar";
+import {
+   StyleSheet, 
+   View, Text 
+} from "react-native";
 import AppBar from "./src/lib/Appbar";
-import Welcome from "./src/lib/welcome";
-import Loading from "./src/lib/loading";
-import { StyleSheet, Text, View } from "react-native";
+
 
 export default function App() {
    const styles = StyleSheet.create(
       {
          app: {
             flex: 1,
-            backgroundColor: "#fff",
+            backgroundColor: "#f5f5f5",
+            alignItems: "center",
+            justifyContent: "center",
          },
-         body: {
+         home: {
             flex: 1,
-            backgroundColor: "#212329",
+
          },
-         bg: { backgroundColor: "#212329", width: "100%", }
+         oi: {
+            fontSize: 32,
+            backgroundColor: "#fff",
+            width: "50%",
+            // height: "50%",
+            aspectRatio: "1 / 1",
+            color: "#27f",
+            textAlign: "center",
+         },
       }
    );
-   let names = [ 
-      {
-         id: 1,
-         name: "Débora",
-         email: "debora.mc.sammarco@gmail.com",
-      }, 
-      {
-         id: 2,
-         name: "Anselmo",
-         email: "noah.kd@gmail.com",
-      }, 
-      {
-         id: 3,
-         name: "Noely",
-         email: "noely.gangello@gmail.com",
-      }, 
-      {
-         id: 4,
-         name: "Bernardo",
-         email: "bernardo.sammarco.gangello@gmail.com",
-      }, 
-   ];
+
 
    return( <>
       <View style={ styles.app }>
          <StatusBar style={ { backgroundColor: "#1b1d22", } } />
          <AppBar />
-         <View style={ styles.body }>
-
-            {
-               names.map( person => {
-                  console.log( { person: person.name } );
-                  return( <>
-                     <Text>{ "== == == == == == == == ==" }</Text>
-                     <Welcome key={ Math.random() + 100000 } name={ person.name } />
-                     <Text>{ person.email }</Text>
-                     <Text>{ person.id }</Text>
-                     <Text>{ "== == == == == == == == ==" }</Text>
-                  </> );
-               } )
-            }
-            <Welcome name="ceo" />
-            <Loading />
+         <View style={ styles.home }>
+            <Text style={ styles.oi }>Lýh te amo</Text>
          </View>
       </View>
    </> );
 }
+

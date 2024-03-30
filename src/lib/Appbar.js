@@ -15,8 +15,9 @@ export default function AppBar() {
             width: "100%",
             height: 81,
             backgroundColor: "#16181c",
-            boxShadow: "#0005 0px 0px 10px",
+            boxShadow: "#922 0px 0px 50px",
             zIndex: 9,
+            elevation: 5,
          },
          home: {
             height: "100%",
@@ -24,18 +25,15 @@ export default function AppBar() {
          },
          options: {
             flex: .1,
-            // height: "100%",
-            // aspectRatio: 1,
          },
          central: {
-            // flex: 1,
             flex: .8,
-            alignContent: "center",
+            alignItems: "center",
             justifyContent: "center",
          },
          title: {
             fontSize: 32,
-            fontWeight: 600,
+            fontWeight: "bold",
             color: "#fc0fc0",
             margin: "auto",
          },
