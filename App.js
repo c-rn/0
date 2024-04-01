@@ -4,9 +4,12 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
    StyleSheet, 
-   View, Text 
+   View, 
+   Text, 
+   Pressable 
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import clb from "./src/tools/clb";
 import AppBar from "./src/lib/Appbar";
 import Views from "./src/views";
 
@@ -38,17 +41,38 @@ export default function App() {
    );
 
    const 
-      [ view, setView ] = useState( "oi" )
+      [ view, setView ] = useState( Views.Home )
+      ,
+      [ Viewholder, setViewholder ] = useState( Views.Home )
    ;
+
+   _( { "view:" : view } );
+   _( { "Viewholder:" : Viewholder } );
+
+   if( view == Views.About ) {
+      Viewholder = <Views.About />;
+   } else if( view == Views.Home ) {
+      Viewholder = ( <Views.Home onExit={ 
+         data => { 
+            setView( data ); 
+         } 
+      }/> );
+   }
+
+
 
 
    return( <>
       <View style={ styles.app }>
          <StatusBar style={ { backgroundColor: "#1b1d22", } } />
          <AppBar />
-         {/* <Views.Home /* onExit={ () => {} } *//> */}
+         <Pressable onPress={ () => setViewholder( Views.About ) }>
+            <Text>
+               Lýh te amo
+            </Text>
+         </Pressable>
          <View style={ styles.home }>
-            <Text style={ styles.oi }>Lýh te amo</Text>
+            { Viewholder }
          </View>
       </View>
    </> );

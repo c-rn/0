@@ -1,12 +1,10 @@
 
 
-// import React from "react";
-// import Home from "./Home";
-// import About from "./About";
+import React from "react";
+import Home from "./Home";
+import About from "./About";
 
-// const Views {
-//    Home,
-//    About,
-// };
-
-// export default Views;
+export default {
+   Home,
+   About,
+};

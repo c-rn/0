@@ -5,7 +5,8 @@ import Icon from "react-native-vector-icons/Ionicons";
 import {
    StyleSheet,
    View, ScrollView,
-   Text 
+   Text,
+   Pressable
 } from "react-native";
 
 
@@ -56,7 +57,9 @@ export default function AppBar() {
       <View style={ styles.appbar }>
          <View style={ styles.home }>
             <View style={ styles.options }>
-               <Icon name="ellipsis-vertical-sharp" style={ styles.appbar_icon } />
+               <Pressable onPress={ () => { console.log( "Oi" ); } }>
+                  <Icon.Button name="ellipsis-vertical-sharp" style={ styles.appbar_icon } />
+               </Pressable>
             </View>
             <View style={ styles.central }>
                <Text style={ styles.title }>{ nome }</Text>
