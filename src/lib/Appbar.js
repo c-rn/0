@@ -1,6 +1,7 @@
 
 
 import React, { useState } from "react";
+import Icon from "react-native-vector-icons/Ionicons";
 import {
    StyleSheet,
    View, ScrollView,
@@ -25,6 +26,8 @@ export default function AppBar() {
          },
          options: {
             flex: .1,
+            alignItems: "center",
+            justifyContent: "center",
          },
          central: {
             flex: .8,
@@ -37,6 +40,11 @@ export default function AppBar() {
             color: "#fc0fc0",
             margin: "auto",
          },
+         appbar_icon: {
+            color: "white",
+            fontSize: 35,
+            fontWeight: "bold",
+         },
       }
    );
 
@@ -47,7 +55,9 @@ export default function AppBar() {
    return( <>
       <View style={ styles.appbar }>
          <View style={ styles.home }>
-            <View style={ styles.options }></View>
+            <View style={ styles.options }>
+               <Icon name="ellipsis-vertical-sharp" style={ styles.appbar_icon } />
+            </View>
             <View style={ styles.central }>
                <Text style={ styles.title }>{ nome }</Text>
             </View>
