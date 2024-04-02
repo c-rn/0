@@ -15,9 +15,11 @@ export default function Home( props ) {
 
    return( <>
       <View>
-         <Text>Home</Text>
+         <Text>&lt;- Home -&gt;</Text>
+         {/*<Pressable onPress={ () => props.onExit( Views.About ) }>*/}
          <Pressable onPress={ () => props.onExit( Views.About ) }>
-            <Text>About btn</Text>
+         {/*<Pressable onPress={ () => serViewholder( Views.About ) }>*/}
+            <Text>About</Text>
          </Pressable>
       </View>
    </> );

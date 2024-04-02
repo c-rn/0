@@ -12,7 +12,7 @@ export default function About() {
 
    return( <>
       <View>
-         <Text>About</Text>
+         <Text>&lt;- About -&gt;</Text>
       </View>
    </> );
 }
