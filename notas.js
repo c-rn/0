@@ -3,7 +3,7 @@
 _ = ( ...v ) => console.log( ...v );
 
 let 
-   notas =[
+   notas = [
       { item: "caderno", price: 15 }
       ,
       { item: "mochila", price: 45.50 }
@@ -18,17 +18,17 @@ function calc() {
    
    notas.map(
       n => {
-         _( ` <card>
+         _( `<card>
                <b>${ n.item }</b>
                <p>${ n.price }</p>
-         </card> ` );
+         </card>` );
          data += n.price
       }
    );
    
-   return( ` <card>
+   return( `<card>
       <p>Total: ${ data }</p>
-   </card> ` );
+   </card>` );
 }
 
 _( calc() );
