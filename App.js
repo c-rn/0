@@ -23,7 +23,7 @@ export default function App() {
             alignItems: "center",
             justifyContent: "center",
          },
-         home: {
+         homePage: {
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
@@ -54,7 +54,7 @@ export default function App() {
    } else if( view == Views.Home ) {
       Viewholder = ( <Views.Home onExit={ 
          data => { 
-            setView( data ); 
+            setViewholder( data ); 
          } 
       }/> );
    }
@@ -67,11 +67,12 @@ export default function App() {
          <StatusBar style={ { backgroundColor: "#1b1d22", } } />
          <AppBar />
          <Pressable onPress={ () => setViewholder( Views.About ) }>
-            <Text>
-               Lýh te amo
-            </Text>
+            <Text>About</Text>
          </Pressable>
-         <View style={ styles.home }>
+         <Pressable onPress={ () => setViewholder( Views.Home ) }>
+            <Text>Home</Text>
+         </Pressable>
+         <View style={ styles.homePage }>
             { Viewholder }
          </View>
       </View>

@@ -17,7 +17,7 @@ function calc() {
    let data = 0;
    
    notas.map(
-      ( n, v ) => {
+      n => {
          _( ` <card>
                <b>${ n.item }</b>
                <p>${ n.price }</p>
