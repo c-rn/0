@@ -17,7 +17,7 @@ export default function AppBar() {
             width: "100%",
             height: 81,
             backgroundColor: "#16181c",
-            boxShadow: "#922 0px 0px 50px",
+            boxShadow: "#0005 0px 0px 10px",
             zIndex: 9,
             elevation: 5,
          },
