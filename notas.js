@@ -18,17 +18,12 @@ function calc() {
    
    notas.map(
       n => {
-         _( `<card>
-               <b>${ n.item }</b>
-               <p>${ n.price }</p>
-         </card>` );
+         _( `<card>\n\t<b>${ n.item }</b>\n\t<p>${ n.price }</p>\n</card>` );
          data += n.price
       }
    );
    
-   return( `<card>
-      <p>Total: ${ data }</p>
-   </card>` );
+   return( `<card>\n\t<p>Total: ${ data }</p>\n</card>` );
 }
 
 _( calc() );
