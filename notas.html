@@ -1,0 +1,48 @@
+
+
+<style>
+   target {
+      display: grid;
+      padding: 1.5rem;
+      gap: 1rem;
+   }
+   
+   card {
+      display: grid;
+      padding: 1.5rem;
+      border-radius: 13px;
+      background: #f5f5f5;
+   }
+</style>
+
+<target id="target"></target>
+
+<script>
+_ = ( ...v ) => console.log( ...v );
+
+let 
+   notas = [
+      { item: "caderno", price: 15 }
+      ,
+      { item: "mochila", price: 45.50 }
+      ,
+      { item: "uniforme", price: 149.80 }
+      ,
+   ]
+;
+
+function calc() {
+   let data = 0;
+   
+   notas.map(
+      n => {
+         target.innerHTML += `<card>\n\t<b>${ n.item }</b>\n\t<p>${ n.price }</p>\n</card>`;
+         data += n.price
+      }
+   );
+   
+   target.innerHTML += `<card>\n\t<p>Total: ${ data }</p>\n</card>`;
+}
+
+_( calc() );
+</script>
