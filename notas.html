@@ -18,31 +18,31 @@
 <target id="target"></target>
 
 <script>
-_ = ( ...v ) => console.log( ...v );
+   _ = ( ...v ) => console.log( ...v );
 
-let 
-   notas = [
-      { item: "caderno", price: 15 }
-      ,
-      { item: "mochila", price: 45.50 }
-      ,
-      { item: "uniforme", price: 149.80 }
-      ,
-   ]
-;
+   let 
+      notas = [
+         { item: "caderno", price: 15 }
+         ,
+         { item: "mochila", price: 45.50 }
+         ,
+         { item: "uniforme", price: 149.80 }
+         ,
+      ]
+   ;
 
-function calc() {
-   let data = 0;
-   
-   notas.map(
-      n => {
-         target.innerHTML += `<card>\n\t<b>${ n.item }</b>\n\t<p>${ n.price }</p>\n</card>`;
-         data += n.price
-      }
-   );
-   
-   target.innerHTML += `<card>\n\t<p><b>Total: </b>${ data }</p>\n</card>`;
-}
+   function calc() {
+      let data = 0;
+      
+      notas.map(
+         n => {
+            target.innerHTML += `<card>\n\t<b>${ n.item }</b>\n\t<p>${ n.price }</p>\n</card>`;
+            data += n.price
+         }
+      );
+      
+      target.innerHTML += `<card>\n\t<p><b>Total: </b>${ data }</p>\n</card>`;
+   }
 
-_( calc() );
+   _( calc() );
 </script>

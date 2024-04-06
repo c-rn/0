@@ -73,12 +73,12 @@ export default function App() {
          <AppBar />
          <Pressable onPress={ () => { setViewholder( 
             <Views.About onExit={ data => setViewholder( data ) } />
-         ) } }>
+         ); } }>
             <Text>About</Text>
          </Pressable>
          <Pressable onPress={ () => { setViewholder( 
             <Views.Home onExit={ data => setViewholder( data ) } />
-         ) } }>
+         ); } }>
             <Text>Home</Text>
          </Pressable>
          <View style={ styles.homePage }>
