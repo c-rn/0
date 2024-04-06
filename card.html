@@ -94,43 +94,43 @@ button {
    </button>
 
    <contatos>
-      <card-lyh 
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
-      <card-lyh 
+      ></lyh-card>
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
-      <card-lyh 
+      ></lyh-card>
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
+      ></lyh-card>
 
-      <card-lyh 
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
-      <card-lyh 
+      ></lyh-card>
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
-      <card-lyh 
+      ></lyh-card>
+      <lyh-card 
          nome="Lýh"
          email="noely.gangello@gmail.com"
          telefone="( 13 ) 9 9199 - 9999"
          idade="28"
-      ></card-lyh>
+      ></lyh-card>
 
       <ceo-card 
          nome="Céo"
@@ -182,7 +182,7 @@ button {
                this.render();
             }
             render() {
-               console.log( "card-lyh" );
+               console.log( "lyh-card" );
             }
          }
          
@@ -195,7 +195,7 @@ button {
       }
 
       const 
-         Lýh = { 
+         defaultCard = { 
             style: `
                <style>
                   card {
@@ -235,6 +235,67 @@ button {
                      <email><b>email: </b></email>
                      <telefone><b>telefone: </b></telefone>
                      <idade><b>idade: </b></idade>
+                  </home>
+               </card>`
+         }
+         ,
+         Lýh = { 
+            style: `
+               <style>
+                  card {
+                     display: block;
+                     border-radius: 13px;
+                     // background: #fff;
+                     // background: #21232970;
+                     padding: 1rem;
+                     // box-shadow: #f273 0 0 0 13px;
+                     // filter: drop-shadow( #9052 0 0 6px );
+                     // border: 6px dashed #f275;
+                     overflow: hidden;
+                  }
+                  
+                  card > home {
+                     display: grid;
+                     // gap: .7rem;
+                     background: #212329;
+                     border-radius: 13px;
+                     // padding: 1rem;
+                     box-shadow: #f273 0 0 0 13px;
+                     filter: drop-shadow( #9052 0 0 6px );
+                     border: 6px dashed #f275;
+                  }
+
+                  card > home > header {
+                     display: grid;
+                     place-items: center;
+                     padding: .5rem;
+                     // background: #fc0fc070;
+                  }
+                  nome {
+                     color: #fc0fc0;
+                     font-size: 1.5rem;
+                     font-weight: 700;
+                  }
+
+                  home-page {
+                     padding: 1rem;
+                  }
+                  home-page, home-page > * {
+                     display: block;
+                  }
+               </style>`
+            ,
+            template: `
+               <card>
+                  <home>
+                     <header>
+                        <nome></nome>
+                     </header>
+                     <home-page>
+                        <email><b>email: </b></email>
+                        <telefone><b>telefone: </b></telefone>
+                        <idade><b>idade: </b></idade>
+                     </home-page>
                   </home>
                </card>`
          }
@@ -304,7 +365,9 @@ button {
          }
       ;
 
-      Card( { style: Lýh.style, template: Lýh.template, tagName: "card-lyh" } );
+      Card( { style: defaultCard.style, template: defaultCard.template, tagName: "default-card" } );
+      
+      Card( { style: Lýh.style, template: Lýh.template, tagName: "lyh-card" } );
 
       Card( { style: Céo.style, template: Céo.template, tagName: "ceo-card" } );
 
