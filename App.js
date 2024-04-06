@@ -12,6 +12,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import clb from "./src/tools/clb";
 import AppBar from "./src/lib/Appbar";
 import Views from "./src/views";
+import Learning from "./src/views/Learning";
 
 
 export default function App() {
@@ -19,12 +20,13 @@ export default function App() {
       {
          app: {
             flex: 1,
-            backgroundColor: "#f5f5f5",
+            backgroundColor: "#212329",
             alignItems: "center",
             justifyContent: "center",
          },
          homePage: {
             flex: 1,
+            width: "100%",
             alignItems: "center",
             justifyContent: "center",
          },
@@ -81,6 +83,37 @@ export default function App() {
          ); } }>
             <Text>Home</Text>
          </Pressable>
+
+         <Pressable onPress={ () => setViewholder(
+            <Learning.state />
+         ) }>
+            <Text>state</Text>
+         </Pressable>
+
+         <Pressable onPress={ () => setViewholder(
+            <Learning.HandlingTextInput />
+         ) }>
+            <Text>Handling Text Input</Text>
+         </Pressable>
+
+         <Pressable onPress={ () => setViewholder(
+            <Learning.UsingScrollView />
+         ) } >
+            <Text>Using ScrollView</Text>
+         </Pressable>
+
+         <Pressable onPress={ () => setViewholder(
+            <Learning.flatList />
+         ) } >
+            <Text>Using FlatList</Text>
+         </Pressable>
+
+         <Pressable onPress={ () => setViewholder(
+            <Learning.SectionListBasics />
+         ) } >
+            <Text>SectionList Basics</Text>
+         </Pressable>
+
          <View style={ styles.homePage }>
             { Viewholder }
          </View>
