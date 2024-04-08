@@ -1,0 +1,12 @@
+
+
+npm i @react-native-firebase/app
+
+android setup {
+   inside gradle /android/build.gradle :
+      buildscript {
+         dependencies {
+            ...
+            classpath 'com.google.gms:google-services:4.3.13'
+   this pluggin inside /android/app/build.gradle :
+      apply plugin: 'com.google.gms.google-services'

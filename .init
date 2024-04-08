@@ -1,0 +1,32 @@
+
+
+expo-router:
+	npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
+package.json:
+	+"main": "expo-router/entry"
+	( initial client: app/_layout.js )
+	-"main": "node_modules/expo/AppEntry.js",
+	( initial client:  )
+
+app.json:
+	"scheme": "your-app-scheme"
+
+web dependencies:
+	npx expo install react-native-web react-dom
+
+app.json:
+	"web":{
+		"bundler" "metro"
+	}
+
+babel.config.js:
+	module.exports = function (api) {
+  		api.cache(true);
+  		return {
+    		presets: ['babel-preset-expo'],
+  		};
+	};
+
+clear bundle cache:
+	npx expo start -c

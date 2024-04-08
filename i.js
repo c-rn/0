@@ -8,8 +8,9 @@ import {
    Text, 
    Pressable 
 } from "react-native";
+import { Link } from "expo-router";
 import Icon from "react-native-vector-icons/Ionicons";
-import clb from "./src/tools/clb";
+/*import clb from "./src/tools/clb";
 import AppBar from "./src/lib/Appbar";
 import Views from "./src/views";
 import Learning from "./src/views/Learning";
@@ -117,8 +118,24 @@ export default function App() {
          <View style={ styles.homePage }>
             { Viewholder }
          </View>
+         
+         <View style={ { flex: 1, padding: 10, } }>
+            <Link href="./src/Views/Contacts.jsx">
+               contacts
+            </Link>
+         </View>
       </View>
    </> );
 }
 
+ */
  
+ 
+ export default function App() {
+    
+    return( <>
+       <View style={ { flex: 1, backgroundColor: #212329, } }>
+         <Text>App index</Text>
+       </View>
+    </> );
+ }
