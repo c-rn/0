@@ -1,0 +1,44 @@
+
+
+<style>
+   body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      color: #fff;
+      flex: 1;
+      min-heigth: 100vh;
+      height: 100%;
+   }
+   
+   homepage {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+   }
+</style>
+
+<appbar title="Céo"></appbar>
+<homepage>
+   <h1>index</h1>
+</homepage>
+
+<script type="module">
+   import AppBar from "./AppBar.js";
+   import bg from "./bg.js";
+   
+   const 
+      _ = ( ...v ) => console.log( ...v )
+      ,
+      $$ = v => document.querySelectorAll( v )
+      ,
+      $a = ( e, a ) => e.getAttribute( a )
+   ;
+    
+   AppBar();
+   bg();
+</script>
