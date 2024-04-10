@@ -13,12 +13,12 @@
 
 <body>
    <menu>
-      <Link
+      <Link id="l1"
          to="https://www.sympla.com.br/sympla-play/mhwNQJYg2hAGNprq6KVAPzj6lHKysxzZT1jcBQS2hm4"
          txt="Microsoft Azure Fundamentals"
       ></Link>
       
-      <Link 
+      <Link id="l2"
          to="https://www.sympla.com.br/sympla-play/k0GhaVIiHVFY0stzYRWJ_SW2N8xJ-nzhibHl0j3ncqQ"
          txt="Meu 1º Negócio"
       ></Link>
@@ -31,13 +31,38 @@
       const 
          _ = ( ...v ) => console.log( ...v )
          ,
+         $ = v => document.querySelector( v )
+         ,
          $$ = v => document.querySelectorAll( v )
       ;
       
-      HTMLElement.prototype.get = function( v ) {
+      /* == [ Element prototype ] 
+      == == == == == == == == == */
+      Element.prototype.$ = function( v ) {
          return(
-            document.querySelector( v )
+            this.querySelector( v )
          );
+      };
+      Element.prototype.$$ = function( v ) {
+         return(
+            this.querySelectorAll( v )
+         );
+      };
+      Element.prototype.css = function( v ) {
+         return(
+            this.style.cssText = v
+         );
+      };
+      Element.prototype.CSS = function( props ) {
+         for( let v in props ) {
+               this.style.prototype = v;
+               this.style.v = props[v];
+               _( "style: ", this.style );
+            /*return(
+               this.style = v 
+               this.style.v = props[v]
+            );*/
+         }
       };
       Element.prototype.attribute = function( v ) {
          return( this.getAttribute( v ) );
@@ -69,5 +94,19 @@
       //}
       
       //Link();
+      
+      l1.css( "font-size: 2rem !important;" );
+      l2.CSS( {
+         fontSize: "3rem",
+         fontWeight: "bold",
+      } );
+      
+      let o = {
+         name: "nome",
+         idade: "13",
+      };
+      for( let i in o ) {
+         _( "i: ", i, ".i: ", o[i] );
+      }
    </script>
 </body>
