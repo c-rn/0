@@ -1,0 +1,73 @@
+
+
+<style>
+   body {
+      margin: 0;
+      background: #212329;
+      color: #fff;
+   }
+   menu {
+      padding: 10px;
+   }
+</style>
+
+<body>
+   <menu>
+      <Link
+         to="https://www.sympla.com.br/sympla-play/mhwNQJYg2hAGNprq6KVAPzj6lHKysxzZT1jcBQS2hm4"
+         txt="Microsoft Azure Fundamentals"
+      ></Link>
+      
+      <Link 
+         to="https://www.sympla.com.br/sympla-play/k0GhaVIiHVFY0stzYRWJ_SW2N8xJ-nzhibHl0j3ncqQ"
+         txt="Meu 1º Negócio"
+      ></Link>
+   </menu>
+
+
+   <!-- script type="module" -->
+   <script>
+      "use strict";
+      const 
+         _ = ( ...v ) => console.log( ...v )
+         ,
+         $$ = v => document.querySelectorAll( v )
+      ;
+      
+      HTMLElement.prototype.get = function( v ) {
+         return(
+            document.querySelector( v )
+         );
+      };
+      Element.prototype.attribute = function( v ) {
+         return( this.getAttribute( v ) );
+      };
+      
+      //export default function Link( props ) {
+         $$( "Link" ).forEach( l => {
+            document.body.style.cssText = `
+            `;
+            _( l.attribute( "txt" ) );
+            return( l.innerHTML = `
+               <style>
+                  link {
+                     display: flex;
+                     color: #fff;
+                  }
+                  link a {
+                     text-decoration: none;
+                     color: #fc0;
+                  }
+               </style>
+               <p>
+                  <a href="${ l.attribute( "to" ) }">
+                     ${ l.attribute( "txt" ) }
+                  </a>
+               </p>
+            ` );
+         } );
+      //}
+      
+      //Link();
+   </script>
+</body>
