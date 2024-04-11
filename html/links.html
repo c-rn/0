@@ -23,6 +23,8 @@
          txt="Meu 1º Negócio"
       ></Link>
    </menu>
+   
+   <p id="testeP">kjgfvb  hfddgvfc tdcfxx</p>
 
 
    <!-- script type="module" -->
@@ -55,13 +57,10 @@
       };
       Element.prototype.CSS = function( props ) {
          for( let v in props ) {
-               this.style.prototype = v;
-               this.style.v = props[v];
-               _( "style: ", this.style );
-            /*return(
-               this.style = v 
-               this.style.v = props[v]
-            );*/
+            _( `this.style.${ v } = "${ props[ v ] }"` );
+            
+               eval( `this.style.${ v } = "${ props[ v ] }"` );
+            
          }
       };
       Element.prototype.attribute = function( v ) {
@@ -92,21 +91,15 @@
             ` );
          } );
       //}
-      
       //Link();
       
       l1.css( "font-size: 2rem !important;" );
-      l2.CSS( {
+      testeP.CSS( {
          fontSize: "3rem",
          fontWeight: "bold",
+         color: "#f00",
       } );
       
-      let o = {
-         name: "nome",
-         idade: "13",
-      };
-      for( let i in o ) {
-         _( "i: ", i, ".i: ", o[i] );
-      }
+      
    </script>
 </body>
